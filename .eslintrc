@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": 0
+  },
+  "globals": {
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  }
+}
