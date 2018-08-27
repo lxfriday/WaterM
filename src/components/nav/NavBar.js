@@ -31,10 +31,10 @@ const NavBar = ({
     </div>
     <div className={style.buttonsWrapper}>
       <div className={style.navigateButtons}>
-        <div className={style.navigateButton} onClick={canGoBack && handleGoBack}>
+        <div className={style.navigateButton} onClick={canGoBack ? handleGoBack : undefined}>
           <img className={canGoBack ? '' : style.navigateImgDisabled} src={arrowLeft} alt="回退" />
         </div>
-        <div className={style.navigateButton} onClick={canGoForward && handleForward}>
+        <div className={style.navigateButton} onClick={canGoForward ? handleForward : undefined}>
           <img className={canGoForward ? '' : style.navigateImgDisabled} src={arrowRight} alt="前进" />
         </div>
       </div>
