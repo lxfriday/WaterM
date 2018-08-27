@@ -1,11 +1,72 @@
 .container {
-  .leftIcon {
-
+  display: flex;
+  flex-direction: row;
+  padding: 0 16px;
+  background-color: #143250;
+  color: #eeeeee;
+  .leftLogo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    -webkit-app-region: drag;
+    img {
+      width: 56px;
+      height: 56px;
+    }
+    .title {
+      font-size: 20px;
+      font-family: Consolas, serif;
+    }
   }
-  .navigateButtons {
-
-  }
-  .rightControlButtons {
-
+  .buttonsWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    height: 64px;
+    .navigateButtons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .navigateButton {
+        cursor: pointer;
+        img {
+          width: 20px;
+          height: 20px;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+        .navigateImgDisabled {
+          opacity: 0.6;
+          cursor: default;
+        }
+      }
+      .navigateButton:nth-child(2) {
+        margin-left: 10px;
+      }
+    }
+    .space {
+      flex: 1;
+      -webkit-app-region: drag;
+    }
+    .rightControlButtons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .controlButton:nth-child(1) {
+        margin-right: 10px;
+      }
+      .controlButton {
+        cursor: pointer;
+        img {
+          width: 20px;
+          height: 20px;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import NavBar from '@/components/nav/NavBar';
+import { sendMinimizeWindow, sendCloseWindow } from '@/utils/process/communication';
 import './index.less';
 
-const App = () => (
-  <h1 className="container">
-    Hello React
-    <div className="box">
-      hello
+const App = () => {
+  const navBarProps = {
+    canGoBack: false,
+    handleGoBack: () => alert('goback'),
+    handleMinimizeWindow: sendMinimizeWindow,
+    handleCloseWindow: sendCloseWindow,
+  };
+  return (
+    <div className="frame">
+      <NavBar {...navBarProps} />
     </div>
-  </h1>
-);
+  );
+};
 
 ReactDOM.render(
   <App />,
