@@ -7,7 +7,7 @@
     "electron": "electron .",
     "start": "npm run dev",
     "dev": "webpack-dev-server",
-    "build:w": "set NODE_ENV=production webpack"
+    "build:w": "set NODE_ENV=production & webpack --color --progress"
   },
   "author": "lxfriday",
   "license": "MIT",
