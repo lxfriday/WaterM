@@ -1,7 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.less';
+
+const App = () => (
+  <h1 className="container">
+    Hello React
+    <div className="box">
+      hello
+    </div>
+  </h1>
+);
 
 ReactDOM.render(
-  <h1>Hello React</h1>,
+  <App />,
   document.getElementById('root'),
 );

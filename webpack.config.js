@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -18,21 +17,24 @@ module.exports = {
             presets: ['env', 'react'],
           },
         },
-        exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
       },
     ],
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    compress: true,
+    compress: false,
+    progress: true,
     port: 9000,
-
     inline: true,
-    hot: true,
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
 };
 
 // 当资源发生改变，以下三种方式都会生成新的bundle，但是又有区别：
