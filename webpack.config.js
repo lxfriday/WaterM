@@ -10,6 +10,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  target: 'electron-renderer',
   resolve: {
     extensions: ['.js'],
     alias: {
