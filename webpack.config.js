@@ -1,10 +1,20 @@
 const path = require('path');
 
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
+
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    extensions: ['.js'],
+    alias: {
+      '@': resolve('src'),
+    },
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   module: {
@@ -15,7 +25,7 @@ module.exports = {
           loader: 'eslint-loader',
         },
         exclude: /node_modules/,
-        enforce: 'pre',
+        enforce: 'pre', // 强制最先使用eslint-loader处理
       },
       {
         test: /\.js$/,
@@ -26,9 +36,14 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'less-loader',
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          { loader: 'less-loader' },
         ],
       },
     ],
