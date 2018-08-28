@@ -1,13 +1,13 @@
 import React from 'react';
-import { Icon } from 'antd';
 import { hot } from 'react-hot-loader';
 
-import NavBar from '@/components/nav/NavBar';
+import TopNavBar from '@/components/nav/TopNavBar';
+import LeftNavBar from '@/components/nav/LeftNavBar';
 import { sendMinimizeWindow, sendCloseWindow } from '@/utils/process/communication';
 import './App.less';
 
 const App = () => {
-  const navBarProps = {
+  const topNavBarProps = {
     canGoBack: false,
     handleGoBack: () => console.log('goback'),
     handleMinimizeWindow: sendMinimizeWindow,
@@ -15,9 +15,8 @@ const App = () => {
   };
   return (
     <div className="frame">
-      <NavBar {...navBarProps} />
-      <Icon type="link" />
-      <Icon type="caret-right" />
+      <TopNavBar {...topNavBarProps} />
+      <LeftNavBar />
     </div>
   );
 };

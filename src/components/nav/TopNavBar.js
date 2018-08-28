@@ -12,9 +12,9 @@ import arrowRight from '@/assets/arrow-right.png';
 import windowMinimize from '@/assets/window-minimize.png';
 import windowClose from '@/assets/window-close.png';
 import APP_CONFIG from '@/configs/appConfig';
-import style from './NavBar.less';
+import style from './TopNavBar.less';
 
-const NavBar = ({
+const TopNavBar = ({
   canGoBack,
   handleGoBack,
   canGoForward,
@@ -51,7 +51,7 @@ const NavBar = ({
   </div>
 );
 
-NavBar.propTypes = {
+TopNavBar.propTypes = {
   canGoBack: PropTypes.bool.isRequired,
   handleGoBack: PropTypes.func.isRequired,
   canGoForward: PropTypes.bool,
@@ -60,9 +60,9 @@ NavBar.propTypes = {
   handleCloseWindow: PropTypes.func.isRequired,
 };
 
-NavBar.defaultProps = {
+TopNavBar.defaultProps = {
   canGoForward: false,
   handleForward: null,
 };
 
-export default NavBar;
+export default TopNavBar;
