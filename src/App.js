@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'antd';
 import { hot } from 'react-hot-loader';
 
 import NavBar from '@/components/nav/NavBar';
@@ -15,6 +16,8 @@ const App = () => {
   return (
     <div className="frame">
       <NavBar {...navBarProps} />
+      <Icon type="link" />
+      <Icon type="caret-right" />
     </div>
   );
 };
