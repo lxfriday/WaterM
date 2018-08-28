@@ -1,6 +1,6 @@
 // Modules to control application life and create native browser window
 const url = require('url');
-// const path = require('path');
+const path = require('path');
 const {
   app,
   BrowserWindow,
