@@ -27,16 +27,17 @@ module.exports = {
       {
         test: /\.js$/,
         use: {
-          loader: 'eslint-loader',
+          loader: 'babel-loader',
         },
-        exclude: /node_modules/,
-        enforce: 'pre', // 强制最先使用eslint-loader处理
+        exclude: [/node_modules/],
       },
       {
         test: /\.js$/,
         use: {
-          loader: 'babel-loader',
+          loader: 'eslint-loader',
         },
+        exclude: [/node_modules/],
+        enforce: 'pre', // 强制最先使用eslint-loader处理
       },
       {
         test: /\.less$/,
@@ -45,12 +46,31 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              importLoaders: 1,
               modules: true,
               localIdentName: '[local]__[hash:base64:10]',
             },
           },
-          { loader: 'less-loader' },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true,
+            },
+          },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            },
+          },
+        ],
+        exclude: [/src/],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
