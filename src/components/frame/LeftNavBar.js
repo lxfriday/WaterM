@@ -39,6 +39,7 @@ class LeftNavBar extends Component {
             <Menu.Item key="/qiniu/list">文件列表</Menu.Item>
             <Menu.Item key="/qiniu/config">设置</Menu.Item>
           </Menu.SubMenu>
+          <Menu.Item key="/">index</Menu.Item>
         </Menu>
       </div>
     );

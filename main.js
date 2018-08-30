@@ -19,6 +19,7 @@ function createWindow() {
     frame: false,
     resizable: false,
     maximizable: false,
+    alwaysOnTop: false, // 永远处于最顶层
     // transparent: true,
   });
 

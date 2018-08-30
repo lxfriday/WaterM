@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import App from './App';
 
@@ -10,7 +11,9 @@ if (process.env.NODE_ENV === 'development') {
   const RedBox = require('redbox-react').default;
   try {
     render(
-      <App />,
+      <Router>
+        <Route component={App} />
+      </Router>,
       root,
     );
   } catch (e) {
@@ -21,7 +24,9 @@ if (process.env.NODE_ENV === 'development') {
   }
 } else {
   render(
-    <App />,
+    <Router>
+      <Route component={App} />
+    </Router>,
     root,
   );
 }
