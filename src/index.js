@@ -1,9 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 import App from './App';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'),
-);
+const root = document.getElementById('root');
+
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line
+  const RedBox = require('redbox-react').default;
+  try {
+    render(
+      <App />,
+      root,
+    );
+  } catch (e) {
+    render(
+      <RedBox error={e} />,
+      root,
+    );
+  }
+} else {
+  render(
+    <App />,
+    root,
+  );
+}
