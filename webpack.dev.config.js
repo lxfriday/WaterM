@@ -22,5 +22,6 @@ module.exports = webpackMerge(webpackBaseConfig, {
     port: 9000,
     inline: true,
     hot: true,
+    historyApiFallback: true,
   },
 });
