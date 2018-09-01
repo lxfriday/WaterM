@@ -15,7 +15,7 @@ import { sendMinimizeWindow, sendCloseWindow } from '@/utils/process/communicati
 import './App.less';
 
 const App = ({ history, location }) => {
-  console.log({ location });
+  console.log('location.pathname => %s', location.pathname);
   const topNavBarProps = {
     canGoBack: false,
     handleGoBack: () => {},
@@ -35,7 +35,7 @@ const App = ({ history, location }) => {
       <ContentContainer {...contentContainerProps}>
         <Switch>
           {/* index route */}
-          <Redirect exact from="/" to="/qiniu/upload" />
+          <Redirect exact strict from="/" to="/qiniu/upload" />
           <Route path="/qiniu/upload" component={QiniuUpload} />
           <Route path="/qiniu/recently" component={QiniuRecently} />
           <Route path="/qiniu/list" component={QiniuList} />

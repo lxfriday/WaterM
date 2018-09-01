@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   render(
     <Router>
-      <Route component={App} />
+      <Route path="/" component={App} />
     </Router>,
     root,
   );
