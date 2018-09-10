@@ -14,17 +14,22 @@ import copy from 'copy-to-clipboard';
 import { shell } from 'electron';
 import upload from '@/configs/upload';
 
+import ImagePreview from '../common/ImagePreview';
 import style from './UploadedList.less';
 
 const columns = [{
   title: '文件名',
   dataIndex: 'name',
   key: 'name',
-  render: name => (
-    <Tooltip title="点击复制文件路径">
-      <div className={style.lineTextWrapper}>
+  render: (name, record) => (
+    <Tooltip
+      placement="right"
+      overlayClassName={style.toolTipOverlay}
+      title={<ImagePreview src={upload.domain + record.key} />}
+    >
+      <span className={style.lineTextWrapper}>
         {name}
-      </div>
+      </span>
     </Tooltip>
   ),
 }, {
