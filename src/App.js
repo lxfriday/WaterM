@@ -9,7 +9,7 @@ import QiniuUpload from '@/routes/qiniu/upload/QiniuUpload';
 import QiniuRecently from '@/routes/qiniu/recently/QiniuRecently';
 import QiniuList from '@/routes/qiniu/list/QiniuList';
 import QiniuConfig from '@/routes/qiniu/config/QiniuConfig';
-import Error404 from '@/routes/Error404';
+// import Error404 from '@/routes/Error404';
 
 import { sendMinimizeWindow, sendCloseWindow } from '@/utils/process/communication';
 import './App.less';
@@ -35,12 +35,12 @@ const App = ({ history, location }) => {
       <ContentContainer {...contentContainerProps}>
         <Switch>
           {/* index route */}
-          <Redirect exact strict from="/" to="/qiniu/upload" />
           <Route path="/qiniu/upload" component={QiniuUpload} />
           <Route path="/qiniu/recently" component={QiniuRecently} />
           <Route path="/qiniu/list" component={QiniuList} />
           <Route path="/qiniu/config" component={QiniuConfig} />
-          <Route path="*" component={Error404} />
+          <Redirect from="*" to="/qiniu/upload" />
+          {/* <Route path="*" component={Error404} /> */}
         </Switch>
       </ContentContainer>
     </div>
