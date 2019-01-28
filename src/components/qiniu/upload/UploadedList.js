@@ -87,7 +87,11 @@ class UploadedList extends Component {
 
   // 点击链接打开系统默认的浏览器显示
   openSystemBrowser = (path) => {
-    shell.openExternal(`http:${path}`);
+    // http://qiniu1.lxfriday.xyz/WaterM/cd619e64-2f9d-4e06-8d14-280310b42fad_IMG_0447.JPG
+    // http:http://qiniu1.lxfriday.xyz/WaterM/cd619e64-2f9d-4e06-8d14-280310b42fad_IMG_0447.JPG
+    console.log(path);
+    console.log(`http:${path}`);
+    shell.openExternal(path);
   };
 
   render() {

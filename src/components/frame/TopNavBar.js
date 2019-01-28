@@ -29,13 +29,14 @@ const TopNavBar = ({
         {APP_CONFIG.appName}
       </span>
     </div>
-    <div className={style.buttonsWrapper}>
+    {/* <div className={style.buttonsWrapper}>
       <div className={style.navigateButtons}>
         <div className={style.navigateButton} onClick={canGoBack ? handleGoBack : undefined}>
           <img className={canGoBack ? '' : style.navigateImgDisabled} src={arrowLeft} alt="回退" />
         </div>
         <div className={style.navigateButton} onClick={canGoForward ? handleForward : undefined}>
-          <img className={canGoForward ? '' : style.navigateImgDisabled} src={arrowRight} alt="前进" />
+          <img className={canGoForward ? ''
+          : style.navigateImgDisabled} src={arrowRight} alt="前进" />
         </div>
       </div>
       <div className={style.space} />
@@ -47,7 +48,7 @@ const TopNavBar = ({
           <img src={windowClose} alt="关闭" />
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 );
 

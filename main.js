@@ -16,10 +16,10 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
-    frame: false,
-    resizable: false,
-    maximizable: false,
-    alwaysOnTop: false, // 永远处于最顶层
+    // frame: false,
+    // resizable: false,
+    // maximizable: false,
+    // alwaysOnTop: false, // 永远处于最顶层
     // transparent: true,
   });
 

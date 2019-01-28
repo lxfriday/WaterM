@@ -21,7 +21,7 @@ class LeftNavBar extends Component {
           theme="dark"
           onClick={this.handleClick}
           style={{ width: 180 }}
-          defaultOpenKeys={['sub1']}
+          defaultOpenKeys={['qiniu']}
           mode="inline"
           selectable={false}
         >

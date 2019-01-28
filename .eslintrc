@@ -23,7 +23,8 @@
     "react/destructuring-assignment": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/forbid-prop-types": 0,
-    "class-methods-use-this": 0
+    "class-methods-use-this": 0,
+    "no-unused-vars": 1
   },
   "globals": {
   },
